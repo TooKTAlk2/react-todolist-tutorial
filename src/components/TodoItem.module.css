@@ -1,0 +1,38 @@
+
+.todo{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 0.5rem 1rem;
+  margin : 0.1rem 0;
+  color: var(--color-text);
+
+}
+.checkbox{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.text{
+  flex: 1 1 auto;
+}
+
+/* 버튼을 동그라미 안에 넣고 싶어요 icon 만든다 */
+.icon{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: var(--color-grey);
+  transition: all 150ms ease-out;
+}
+.icon:hover{
+  background-color: var(--color-accent);
+  transform: rotate(15deg) scale(1.2)
+}
+
+.button{
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: transparent;
+  font-weight: bold;
+  opacity: 0.8;
+}

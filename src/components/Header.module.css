@@ -1,0 +1,39 @@
+.header{
+  display : flex;
+  justify-content: space-between;
+  align-items:center;
+  background-color: var(--color-bg-dark);
+  border-bottom: 1px solid var(--color-grey);
+}
+
+.filters{
+  /* 자식(item)들을 수평으로 만들어줌 */
+  display : flex;
+}
+
+.filter{
+  font-size: 1.4rem;
+  margin: 0.3rem;
+  /* 1rem  16px*/
+  text-transform: capitalize;
+  /* 뒷배경을 투명하게 */
+  background-color: transparent; 
+  /* 글자 색상 */
+  color: var(--color-accent);
+  /* 선택되지 않은 버튼이라면 -20% 투명하게 */
+  opacity: 0.8;
+  font-weight: bold;
+}
+
+/* 마우스를 올리거나 선택되면 좀더 진하게 */
+.filter:hover,
+.filter.selected{
+  opacity: 1;
+}
+
+/* 밑줄만들기 , dom 요소는 아니지만 스타일링 하기 위해서 */
+.filter.selected::after{
+  content: '';
+  display: block;
+  border: 1px solid var(--color-text);
+}

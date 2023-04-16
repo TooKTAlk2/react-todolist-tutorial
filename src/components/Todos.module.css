@@ -1,0 +1,30 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* 하단 input창이 사라지는것을 방지해줌. 원리가뭘까? */
+  min-height: 0px; 
+  background-color: var(--color-bg);
+
+}
+.list{
+  /* input창이 차지 하도록 0(grow) 1(shrink) auto(기본너비)를 수정함*/
+  /* 현재 부모가 column 방향으로 되어 있기 때문에 grow를 1로 수정하면 세로 방향으로 가득찬다. */
+  flex :1 1 auto;
+  /* 자식(아이템)이 넘친다면 스크롤 생기게 하기 */
+  overflow-y: auto;
+
+}
+
+*::-webkit-scrollbar{
+  width : 0.5rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--color-grey);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-accent);
+}
