@@ -15,7 +15,6 @@ export default function AddTodo({ onAdd }) {
   }
   const handleChange = (e) => {
     setText(e.target.value)
-    console.log(text)
   }
 
   return (

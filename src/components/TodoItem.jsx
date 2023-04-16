@@ -8,7 +8,6 @@ export default function TodoItem({ todo, onDelete, onUpdate }) {
   }
   const handleUpdateTodo = (e) => {
     const status = e.target.checked ? 'completed' : 'active'
-    console.log(status)
     onUpdate({ ...todo, status })
   }
   return (

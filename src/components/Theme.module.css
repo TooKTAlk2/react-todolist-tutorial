@@ -1,0 +1,11 @@
+.icon{
+  background-color: var(--color-bg);
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+}
+
+.button{
+  background-color: transparent;
+  font-weight: bold;
+}

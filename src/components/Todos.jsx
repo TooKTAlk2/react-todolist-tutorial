@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AddTodo from './AddTodo'
 import { v4 as uuidv4 } from 'uuid'
 import TodoItem from './TodoItem'
@@ -23,7 +23,7 @@ const initialTodos = [
 ]
 
 export default function Todos({ filter }) {
-  const [todos, setTodos] = useState(initialTodos)
+  const [todos, setTodos] = useState(readTodosFromLocalStorage)
   const handleAddTodo = (todo) => {
     setTodos([...todos, todo])
   }
@@ -33,8 +33,12 @@ export default function Todos({ filter }) {
   const handleUpdateTodo = (updated) => {
     setTodos(todos.map((todo) => (todo.id === updated.id ? updated : todo)))
   }
-
   const filteredItems = getFilteredItems(todos, filter)
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
+
   return (
     <>
       <section className={styles.container}>
@@ -60,4 +64,9 @@ function getFilteredItems(todos, filter) {
     return todos
   }
   return todos.filter((todo) => todo.status === filter)
+}
+function readTodosFromLocalStorage() {
+  console.log('readTodosFromLocalStorage')
+  const todos = localStorage.getItem('todos')
+  return todos ? JSON.parse(todos) : []
 }
