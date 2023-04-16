@@ -1,26 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AddTodo from './AddTodo'
-import { v4 as uuidv4 } from 'uuid'
 import TodoItem from './TodoItem'
 import styles from './Todos.module.css'
-
-const initialTodos = [
-  {
-    id: uuidv4(),
-    text: 'Todo 1',
-    status: 'active',
-  },
-  {
-    id: uuidv4(),
-    text: 'Todo 2',
-    status: 'active',
-  },
-  {
-    id: uuidv4(),
-    text: 'Todo 3',
-    status: 'active',
-  },
-]
 
 export default function Todos({ filter }) {
   const [todos, setTodos] = useState(readTodosFromLocalStorage)
